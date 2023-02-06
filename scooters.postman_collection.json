@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "6000c7bf-388e-445c-882e-f4edbf14572d",
+		"name": "scooters",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "available scooters",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "mobile_api_key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{scooter}}/clients/scooters/available",
+					"host": [
+						"{{scooter}}"
+					],
+					"path": [
+						"clients",
+						"scooters",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "connect scooter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "scooter_api_key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scooter_uuid\": \"cd651482-f10e-47d1-9f31-a77fd1fa343d\",\n    \"mobile_uuid\": \"20587b2c-3969-49b6-add1-27fe09006ef9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scooter}}/scooters/connect",
+					"host": [
+						"{{scooter}}"
+					],
+					"path": [
+						"scooters",
+						"connect"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "disconnect scooter",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "scooter_api_key",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"scooter_uuid\": \"cd651482-f10e-47d1-9f31-a77fd1fa343d\",\n    \"mobile_uuid\": \"20587b2c-3969-49b6-add1-27fe09006ef9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{scooter}}/scooters/disconnect",
+					"host": [
+						"{{scooter}}"
+					],
+					"path": [
+						"scooters",
+						"disconnect"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
