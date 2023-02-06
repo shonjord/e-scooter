@@ -2,7 +2,7 @@ help:
 	@echo "scooter"
 	@echo "----------------------------------------------------------------------------------------------------------"
 	@echo "List of available targets:"
-	@echo "  api-docs                       - generates Restful API documentation.                                                                         "
+	@echo "  api-docs                       - generates Restful API documentation.                                   "
 	@echo "  container-up                   - spins up application docker-containers."
 	@echo "  container-down                 - kills application docker-containers."
 	@echo "  daemon                         - installs a go daemon (go mod OFF), for dev."
