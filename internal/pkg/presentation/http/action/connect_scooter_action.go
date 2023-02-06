@@ -25,12 +25,12 @@ func NewConnectScooterAction(c scooterConnector) *ConnectScooterAction {
 }
 
 // Handle is responsible to make a connection between a mobile and a scooter for a new ride :).
-func (c *ConnectScooterAction) Handle(req *http.Request, res *http.Response) error {
+func (a *ConnectScooterAction) Handle(req *http.Request, res *http.Response) error {
 	var cmd *command.ConnectScooter
 
 	if err := json.NewDecoder(req.Body()).Decode(&cmd); err != nil {
 		return res.BadRequest(err)
 	}
 
-	return c.connector.ConnectScooter(cmd)
+	return a.connector.ConnectScooter(cmd)
 }
