@@ -1,0 +1,4 @@
+{
+  "Message": "the following scooter is occupied: {uuid}",
+  "HTTPStatusCounterpart": 409
+}
