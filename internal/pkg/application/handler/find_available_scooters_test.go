@@ -54,7 +54,7 @@ func thenFindAvailableScootersShouldReturnScooterRepositoryError(
 	h := handler.NewFindAvailableScooters(sr)
 	_, err := h.FindAvailableScooters()
 
-	assert.True(t, err != nil, "scooter repository should return an errors when something unexpected happens.")
+	assert.True(t, err != nil, "scooter repository should return an error when something unexpected happens.")
 }
 
 func thenFindAvailableScootersHandlerShouldReturnNoError(
