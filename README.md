@@ -56,6 +56,7 @@ Run migrations if it's the first time running this application.
 ```bash
 make migration
 ```
+note: make sure that MySQL container is up and running before executing the migrations, if you run make container-down, and you spin up again the application, migrations need to run again.
 
 While developing is very common and useful to tail the logs, for this you can execute the following command on your CLI:
 ```bash
