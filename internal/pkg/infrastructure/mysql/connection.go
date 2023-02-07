@@ -26,7 +26,7 @@ func (d *Connection) FindOneBy(query string, dest ...interface{}) error {
 	return d.connection.QueryRow(query).Scan(dest...)
 }
 
-// FindManyBy scans a callback.
+// FindManyBy scans a callback and executes the given query.
 func (d *Connection) FindManyBy(query string, callback func(*sql.Rows) error) error {
 	rows, err := d.connection.Query(query)
 	if err != nil {
