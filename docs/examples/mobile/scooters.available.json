@@ -1,0 +1,20 @@
+[
+  {
+    "uuid": "cd651482-f10e-47d1-9f31-a77fd1fa343d",
+    "latitude": 31.4225,
+    "longitude": -122.084,
+    "status": "available"
+  },
+  {
+    "uuid": "d544915a-346b-4ea8-b2ee-dfc631f00ba5",
+    "latitude": 31.4225,
+    "longitude": -126.084,
+    "status": "available"
+  },
+  {
+    "uuid": "29d2513a-546f-4a41-8d8e-291c921e6ebe",
+    "latitude": 21.4225,
+    "longitude": -12.084,
+    "status": "available"
+  }
+]

@@ -1,0 +1,117 @@
+#%RAML 1.0
+title: Scootin' Aboot
+version: 1.0
+documentation:
+  - title: API endpoints documentation.
+    content: |
+      This is the API documentation for Scootin' Aboot.
+      Here are some resources that will help you understand the basics of all endpoints.
+
+types:
+  ResponseError:
+    properties:
+      Message: string
+      HTTPStatusCounterpart: number
+
+traits:
+  secured:
+    headers:
+      x-api-key:
+        description: token to be able to communicate with the endpoint.
+        type: string
+
+/clients/scooters/available:
+  displayName : available scooters.
+  description: scooters available to ride.
+  get:
+    is: [secured]
+    description: returns a collection of available scooters for a mobile client.
+    responses:
+      200:
+        body:
+          application/json:
+            type: array
+            example: !include examples/mobile/scooters.available.json
+      401:
+        body:
+          application/json:
+            type: ResponseError
+            example: !include examples/error/401.response.json
+      500:
+        body:
+          application/json:
+            type: ResponseError
+            example: !include examples/error/500.response.json
+
+/scooters:
+  displayName : scooters endpoints.
+  /connect:
+    displayName : connection to a scooter.
+    description: connects a mobile client to a scooter.
+    post:
+      is: [secured]
+      description: posts a request to connect a mobile client to a scooter.
+      body:
+        application/json:
+          example: |
+              {
+                "scooter_uuid": "{scooter_uuid}",
+                "mobile_uuid": "{mobile_uuid}"
+              }
+      responses:
+        200:
+        401:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/401.response.json
+        404:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/404.response.json
+        409:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/409.response.json
+        500:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/500.response.json
+  /disconnect:
+    displayName : scooter disconnection.
+    description: disconnects a mobile client from a scooter.
+    post:
+      is: [secured]
+      description: posts a request to disconnect a mobile client from a scooter.
+      body:
+        application/json:
+          example: |
+              {
+                "scooter_uuid": "{scooter_uuid}",
+                "mobile_uuid": "{mobile_uuid}"
+              }
+      responses:
+        200:
+        401:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/401.response.json
+        404:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/404.response.json
+        409:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/409.response.json
+        500:
+          body:
+            application/json:
+              type: ResponseError
+              example: !include examples/error/500.response.json
